@@ -80,8 +80,12 @@ int launch(char *commandName) {
     // Get the main bundle
     NSBundle *mainBundle = [NSBundle mainBundle];
 
-    // Set the working directory to the user's home directory
-    chdir([NSHomeDirectory() UTF8String]);
+    // NSString *bundlePath = [mainBundle resourcePath];
+    NSString *bundlePath = [[[NSBundle mainBundle] resourcePath] stringByDeletingLastPathComponent];
+    NSString *workingPath = [bundlePath stringByAppendingString:@"/Java"];
+
+    // Set the working directory to app Java directory
+    chdir([workingPath UTF8String]);
 
     // Get the main bundle's info dictionary
     NSDictionary *infoDictionary = [mainBundle infoDictionary];
