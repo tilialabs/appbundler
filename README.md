@@ -6,7 +6,7 @@ Changed app working directory to app Java directory
 
 ## Compiling
 
-Install ant on your system. From Terminal go to the appbundler director and run
+Install ant on your system. From Terminal go to the appbundler directory and run:
 ```sh
 ant
 ```
